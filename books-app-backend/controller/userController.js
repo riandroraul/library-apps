@@ -162,16 +162,16 @@ const reqPasswordReset = async (req, res) => {
     if (!token) {
       token = await new Token({
         userId: user._id,
-        token: jwt.sign({ id: user._id }, "secretkey", { expiresIn: "30m" }),
+        token: jwt.sign({ id: user._id }, "secretkey", { expiresIn: "20m" }),
       }).save();
     }
     const url = req.body.url;
     const html = `<h3>Hallo ${user.nama} &#128512;</h3>
     <p>silahkan klik link dibawah untuk mengganti password anda atau salin tautan dan buka di browser</p>
-    <p style="color: red">link waktu terbatas, segera ganti password anda</p>
+    <p style="color: red; font-size: 12px; font-weight: bold;">&#9888; link waktu terbatas, segera ganti password anda</p>
     <a href='${url}/change-password/${user._id}/${token.token}'>Ganti Password</a>
     <p>link tautan : ${url}/change-password/${user._id}/${token.token}</p>
-    <p>link expired : 30 Menit</p>
+    <p>link expired : 20 Menit</p>
     `;
     sendEmail(user.email, "Reset Password", html);
     // req.link = link;
@@ -204,14 +204,39 @@ const resetPassword = async (req, res) => {
       error.statusCode = 400;
       throw error;
     }
-    const newtoken = token.token;
-    const decode = jwt.verify(newtoken, "secretkey");
-    console.log(decode);
+
+    jwt.verify(token.token, "secretkey", (err, decode) => {
+      if (err) {
+        err.message = "link not valid or expired";
+        const error = new Error(err.message, res.status(400));
+        error.status = 400;
+
+        token
+          .delete()
+          .then((err, result) => {
+            if (err) throw err;
+            console.log(result);
+          })
+          .catch((err) => console.log(err));
+        throw error;
+      }
+    });
+
+    // const decode = jwt.verify(token.token, "secretkey");
+    // console.log(decode);
+    // console.log(Date.now());
+    // console.log(decode.exp * 1000);
+    // if (decode.exp * 1000 < Date.now()) {
+    //   await token.delete();
+    //   const error = new Error("invalid link or expired", res.status(400));
+    //   error.statusCode = 400;
+    //   throw error;
+    // }
     user.password = await hashPassword(req.body.password);
     await user.save();
     await token.delete();
 
-    res.json({ message: "password reset succesfully" });
+    res.status(200).json({ message: "Password changed succesfully" });
   } catch (error) {
     res.status(400).json({ status: error.statusCode, message: error.message });
     console.log(error);

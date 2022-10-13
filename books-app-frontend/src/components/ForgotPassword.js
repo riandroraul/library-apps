@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
@@ -72,6 +72,11 @@ const ForgotPassword = () => {
                         value={email}
                         onChange={(event) => setEmail(event.target.value)}
                       />
+                      <div class="message">
+                        <p class="text-start text-primary">
+                          Pastikan email yang anda masukkan email yang aktif
+                        </p>
+                      </div>
                     </div>
                     <button
                       type="submit"
@@ -81,6 +86,7 @@ const ForgotPassword = () => {
                     </button>
                   </div>
                 </form>
+                <Link to={"/login"}>Kembali</Link>
               </div>
             </div>
           </div>

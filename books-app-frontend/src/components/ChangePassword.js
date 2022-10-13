@@ -50,18 +50,19 @@ const ChangePassword = () => {
     );
     const { message } = await response.json();
     if (response.status !== 200) {
-      return Swal.fire({
+      Swal.fire({
         icon: "error",
         text: message,
         title: "Failed!",
       });
+      return navigate("/login");
     }
-    navigate("/login");
-    return Swal.fire({
+    Swal.fire({
       icon: "success",
       text: message,
       title: "Success",
     });
+    return navigate("/login");
     // }
   };
 
