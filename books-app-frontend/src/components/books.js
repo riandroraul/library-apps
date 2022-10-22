@@ -10,13 +10,13 @@ const Books = () => {
   const [keyword, setKeyword] = useState("");
 
   const getAllBooks = async () => {
-    const response = await fetch("http://localhost:5000/books", {
+    const response = await fetch(`http://localhost:5000/books`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
     });
-    const books = await response.json();
+    const { books } = await response.json();
     setBooks(books);
   };
 
@@ -73,26 +73,28 @@ const Books = () => {
   }, [keyword]);
 
   const title = "Halaman Buku";
+  // console.log(totalPage);
   return (
     <div>
       <Navbar />
       <div className="container">
         <h1>{title}</h1>
-        <div class="row">
-          <div class="col-2">
+        <div className="row">
+          <div className="col-6">
             <ButtonAdd path="/tambah" />
           </div>
-          <div className="col-lg-7 my-3">
-            <div className="input-group mb-3">
-              <input
-                type="text"
-                className="form-control"
-                placeholder="cari nama buku ..."
-                aria-label="cari nama buku"
-                value={keyword}
-                onChange={(event) => setKeyword(event.target.value)}
-              />
-              {/* <button
+        </div>
+        <div className="col-lg-6 my-3 justify-content-center d-block">
+          <div className="input-group mb-3 ">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="cari nama buku ..."
+              aria-label="cari nama buku"
+              value={keyword}
+              onChange={(event) => setKeyword(event.target.value)}
+            />
+            {/* <button
               className="btn btn-outline-secondary"
               type="button"
               id="button-addon2"
@@ -102,9 +104,7 @@ const Books = () => {
               >
               search
             </button> */}
-            </div>
           </div>
-          <div class="col-2"></div>
         </div>
         <div className="table table-responsive">
           <table className="table table-hover">

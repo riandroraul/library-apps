@@ -2,9 +2,13 @@ const { Book, ObjectId } = require("../models/books");
 
 const getAllBooks = async (req, res) => {
   try {
+    // const currentPage = parseInt(req.query.page) || 1;
+    // const perPage = parseInt(req.query.perPage) || 2;
+    // const booksPerPage = await Book.find()
+    //   .skip((currentPage - 1) * perPage)
+    //   .limit(perPage);
     const books = await Book.find();
-    // res.setHeader("authrization", req.token);
-    res.status(200).json(books);
+    res.status(200).json({ books });
   } catch (err) {
     res.status(404).json({
       message: err.message,
@@ -54,6 +58,8 @@ const addBooks = async (req, res) => {
     namaBuku: req.body.namaBuku,
     penerbit: req.body.penerbit,
     pengarang: req.body.pengarang,
+    tahunTerbit: req.body.tahunTerbit,
+    tempatTerbit: req.body.tempatTerbit,
   });
   try {
     const duplikat = await Book.findOne({ namaBuku: books.namaBuku });
@@ -85,6 +91,8 @@ const updateBook = async (req, res) => {
           namaBuku: req.body.namaBuku,
           penerbit: req.body.penerbit,
           pengarang: req.body.pengarang,
+          tahunTerbit: req.body.tahunTerbit,
+          tempatTerbit: req.body.tempatTerbit,
         },
       }
     );
@@ -105,6 +113,16 @@ const deleteBook = async (req, res) => {
     res.status(404).json({ message: "id not found" });
   }
 };
+
+// const booksPagination = (req, res) => {
+//   try {
+//     const page = req.query.page || 1;
+//     const perPage = req.query.perpage || 10;
+
+//   } catch (error) {
+//     res.status(400).json({ message: err.message });
+//   }
+// };
 
 const reqError = (req, res) => {
   res

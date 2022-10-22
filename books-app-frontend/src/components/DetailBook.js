@@ -89,7 +89,7 @@ const DetailBook = () => {
                     <font size={5}>: </font>
                   </div>
                   <div className="mb-3 col-6">
-                    <font size={5}>2016</font>
+                    <font size={5}>{book.tahunTerbit}</font>
                   </div>
                 </div>
                 <div className="row">
@@ -100,7 +100,7 @@ const DetailBook = () => {
                     <font size={5}>: </font>
                   </div>
                   <div className="mb-3 col-6">
-                    <font size={5}>Jakarta</font>
+                    <font size={5}>{book.tempatTerbit}</font>
                   </div>
                 </div>
                 <div className="my-3">

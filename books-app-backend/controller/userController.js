@@ -142,7 +142,7 @@ const login = async (req, res) => {
           role: cekUser.role,
         };
 
-        const token = jwt.sign(dataUser, "secret", { expiresIn: "1d" });
+        const token = jwt.sign(dataUser, "secret", { expiresIn: "2h" });
         res.status(200).json({ dataUser, token, message: "login berhasil" });
       }
     }

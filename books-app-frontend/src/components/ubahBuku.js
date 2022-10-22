@@ -7,6 +7,8 @@ const UbahBuku = () => {
   const [namaBuku, setNamaBuku] = useState("");
   const [penerbit, setPenerbit] = useState("");
   const [pengarang, setPengarang] = useState("");
+  const [tahunTerbit, setTahunTerbit] = useState();
+  const [tempatTerbit, setTempatTerbit] = useState("");
   const { id } = useParams();
 
   const navigate = useNavigate();
@@ -23,6 +25,8 @@ const UbahBuku = () => {
       namaBuku,
       penerbit,
       pengarang,
+      tahunTerbit,
+      tempatTerbit,
     };
 
     const requestOptions = {
@@ -66,6 +70,8 @@ const UbahBuku = () => {
     setNamaBuku(book.namaBuku);
     setPenerbit(book.penerbit);
     setPengarang(book.pengarang);
+    setTahunTerbit(book.tahunTerbit);
+    setTempatTerbit(book.tempatTerbit);
   };
 
   useEffect(() => {
@@ -131,6 +137,36 @@ const UbahBuku = () => {
                       required
                       value={pengarang}
                       onChange={(event) => setPengarang(event.target.value)}
+                    />
+                  </div>
+                  <div className="mb-3 ">
+                    <label htmlFor="pengarang" className="form-label">
+                      Tahun Terbit
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      name="tahunTerbit"
+                      id="tahunTerbit"
+                      placeholder="masukkan nama tahun terbit.. "
+                      value={tahunTerbit}
+                      onChange={(event) => setTahunTerbit(event.target.value)}
+                      required
+                    />
+                  </div>
+                  <div className="mb-3 ">
+                    <label htmlFor="tempatTerbit" className="form-label">
+                      Tempat Terbit
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="tempatTerbit"
+                      id="tempatTerbit"
+                      placeholder="masukkan nama tempat terbit.. "
+                      value={tempatTerbit}
+                      onChange={(event) => setTempatTerbit(event.target.value)}
+                      required
                     />
                   </div>
                   <div className="mb-3">

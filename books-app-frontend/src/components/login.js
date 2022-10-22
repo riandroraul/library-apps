@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -96,6 +96,11 @@ const Login = () => {
                         value={password}
                         onChange={(event) => setPassword(event.target.value)}
                       />
+                      {/* <div class="input-group-addon">
+                        <Link href="">
+                          <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                        </Link>
+                      </div> */}
                     </div>
                     <button
                       type="submit"

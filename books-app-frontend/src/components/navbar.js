@@ -32,7 +32,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg bg-secondary">
       <div className="container">
         <Link className="navbar-brand text-light" to="/">
-          Home
+          Beranda
         </Link>
         <button
           className="navbar-toggler"
@@ -61,7 +61,7 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link className="nav-link text-light" to="/about">
-                About
+                Tentang Perpus
               </Link>
             </li>
             <NavUser nama={"Users"} path={"/users"} />
@@ -74,7 +74,7 @@ const Navbar = () => {
                   onLogout();
                 }}
               >
-                Logout
+                Keluar
               </Link>
             </li>
           </ul>

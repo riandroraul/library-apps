@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import userlogin from "../userlogin";
-import "../css/style.css";
 
 const Aksi = (props) => {
   const { role: roleUser } = userlogin();

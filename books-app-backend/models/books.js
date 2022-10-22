@@ -17,6 +17,14 @@ const Book = mongoose.model("Book", {
     type: String,
     required: true,
   },
+  tahunTerbit: {
+    type: Number,
+    required: true,
+  },
+  tempatTerbit: {
+    type: String,
+    required: true,
+  },
 });
 
 module.exports = { Book, ObjectId };

@@ -7,6 +7,8 @@ const TambahBuku = () => {
   const [namaBuku, setNamaBuku] = useState("");
   const [penerbit, setPenerbit] = useState("");
   const [pengarang, setPengarang] = useState("");
+  const [tahunTerbit, setTahunTerbit] = useState();
+  const [tempatTerbit, setTempatTerbit] = useState("");
 
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
@@ -19,6 +21,8 @@ const TambahBuku = () => {
       namaBuku,
       penerbit,
       pengarang,
+      tahunTerbit,
+      tempatTerbit,
     };
 
     const requestOptions = {
@@ -111,6 +115,36 @@ const TambahBuku = () => {
                       placeholder="masukkan nama pengarang.. "
                       value={pengarang}
                       onChange={(event) => setPengarang(event.target.value)}
+                      required
+                    />
+                  </div>
+                  <div className="mb-3 ">
+                    <label htmlFor="pengarang" className="form-label">
+                      Tahun Terbit
+                    </label>
+                    <input
+                      type="number"
+                      className="form-control"
+                      name="tahunTerbit"
+                      id="tahunTerbit"
+                      placeholder="masukkan nama tahun terbit.. "
+                      value={tahunTerbit}
+                      onChange={(event) => setTahunTerbit(event.target.value)}
+                      required
+                    />
+                  </div>
+                  <div className="mb-3 ">
+                    <label htmlFor="tempatTerbit" className="form-label">
+                      Tempat Terbit
+                    </label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      name="tempatTerbit"
+                      id="tempatTerbit"
+                      placeholder="masukkan nama tempat terbit.. "
+                      value={tempatTerbit}
+                      onChange={(event) => setTempatTerbit(event.target.value)}
                       required
                     />
                   </div>
