@@ -127,7 +127,7 @@ const TambahBuku = () => {
                       className="form-control"
                       name="tahunTerbit"
                       id="tahunTerbit"
-                      placeholder="masukkan nama tahun terbit.. "
+                      placeholder="masukkan tahun terbit.. "
                       value={tahunTerbit}
                       onChange={(event) => setTahunTerbit(event.target.value)}
                       required
@@ -142,7 +142,7 @@ const TambahBuku = () => {
                       className="form-control"
                       name="tempatTerbit"
                       id="tempatTerbit"
-                      placeholder="masukkan nama tempat terbit.. "
+                      placeholder="masukkan tempat terbit.. "
                       value={tempatTerbit}
                       onChange={(event) => setTempatTerbit(event.target.value)}
                       required

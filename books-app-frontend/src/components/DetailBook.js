@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Navbar from "./navbar";
 import { Link, useParams } from "react-router-dom";
 
 const DetailBook = () => {
@@ -23,6 +24,7 @@ const DetailBook = () => {
   console.log();
   return (
     <div>
+      <Navbar />
       <div className="min-vh-100 bg-secondary bg-opacity-50">
         <div className="container">
           <div className="row d-flex justify-content-center">

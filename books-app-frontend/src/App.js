@@ -16,6 +16,7 @@ import PageUser from "./components/auth-content/PageUser";
 import ForgotPassword from "./components/ForgotPassword";
 import ChangePassword from "./components/ChangePassword";
 import DetailBook from "./components/DetailBook";
+import ProfilDetail from "./components/ProfilDetail";
 
 function App() {
   // console.log(exp);
@@ -57,6 +58,7 @@ function App() {
         </Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/logout" element={<Login />}></Route>
+        <Route path="/profil" element={<ProfilDetail />}></Route>
         <Route
           path="/change-password/:id/:token"
           element={<ChangePassword />}
