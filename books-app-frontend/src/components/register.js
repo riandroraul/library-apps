@@ -15,6 +15,13 @@ const Register = () => {
       email,
       password,
     };
+    if (password.length < 5) {
+      return Swal.fire({
+        icon: "error",
+        text: "password must be 5 characters or more",
+        title: "Failed",
+      });
+    }
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
