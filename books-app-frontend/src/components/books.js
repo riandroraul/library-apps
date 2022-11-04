@@ -72,7 +72,7 @@ const Books = () => {
     }
   }, [keyword]);
 
-  const title = "Halaman Buku";
+  const title = "Daftar Buku";
   // console.log(totalPage);
   return (
     <div>

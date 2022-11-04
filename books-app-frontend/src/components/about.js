@@ -31,7 +31,7 @@ const About = () => {
                   fill="currentColor"
                 ></path>
               </svg>
-              <span class="fs-4">Perpustakaan Mts Al - Istam</span>
+              <span class="fs-4">Perpustakaan SMK Al -  Amanah</span>
             </a>
           </header>
 

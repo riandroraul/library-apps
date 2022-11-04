@@ -77,7 +77,7 @@ const Users = () => {
       searchUser();
     }
   }, [keyword]);
-  const title = "Halaman Users";
+  const title = "Daftar Users";
   return (
     <div>
       <Navbar />
