@@ -10,7 +10,7 @@ const ProfilDetail = () => {
       <Navbar />
       <main>
         <div className="container py-4">
-          <Header />
+          <Header title={"Profil Saya"} />
           <div class="row ">
             <div class="col-6 bg-light rounded-3">
               <h6 className="display-5 fw-bold">Profile</h6>

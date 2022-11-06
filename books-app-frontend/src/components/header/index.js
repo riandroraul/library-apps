@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export const Header = () => {
+export const Header = (props) => {
   return (
     <header class="pb-3 mb-3 border-bottom">
       <Link
@@ -23,7 +23,7 @@ export const Header = () => {
             fill="currentColor"
           ></path>
         </svg>
-        <span class="fs-4">Perpustakaan SMK Al - Amanah</span>
+        <span class="fs-4">{props.title} | Perpustakaan SMK Al - Amanah</span>
       </Link>
     </header>
   );

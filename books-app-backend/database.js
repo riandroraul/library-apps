@@ -7,5 +7,5 @@ mongoose.connect(`${process.env.MONGODB_LOKAL}`, {
 });
 
 mongoose.connection.on("connected", () => {
-  console.log(`mongodb atlas terkoneksi...`);
+  console.log(`mongodb terkoneksi...`);
 });

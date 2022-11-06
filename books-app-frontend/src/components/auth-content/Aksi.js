@@ -8,7 +8,7 @@ const Aksi = (props) => {
     return (
       <td className="d-grid gap-2 d-md-block mx-auto">
         <Link to={props.pathdetail}>
-          <button type="button" className="btn btn-outline-info btn-sm pl">
+          <button type="button" className="btn btn-outline-info btn-sm ">
             Detail
           </button>
         </Link>

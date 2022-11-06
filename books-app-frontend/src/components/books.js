@@ -3,6 +3,7 @@ import Navbar from "./navbar";
 import Swal from "sweetalert2";
 import ButtonAdd from "./auth-content/ButtonAdd";
 import Aksi from "./auth-content/Aksi";
+import { Header } from "./header";
 // import ProtectedContent from "./ProtectedContent";
 
 const Books = () => {
@@ -77,24 +78,26 @@ const Books = () => {
   return (
     <div>
       <Navbar />
-      <div className="container">
-        <h1>{title}</h1>
-        <div className="row">
-          <div className="col-6">
-            <ButtonAdd path="/tambah" />
+      {/* <h1>{title}</h1> */}
+      <div className="container p-5 mb-4 ">
+        <Header title={title} />
+        <div class="bg-light rounded-3">
+          <div className="row mx-5">
+            <div className="col-6">
+              <ButtonAdd path="/tambah" />
+            </div>
           </div>
-        </div>
-        <div className="col-lg-6 my-3 justify-content-center d-block">
-          <div className="input-group mb-3 ">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="cari nama buku ..."
-              aria-label="cari nama buku"
-              value={keyword}
-              onChange={(event) => setKeyword(event.target.value)}
-            />
-            {/* <button
+          <div className="col-lg-6 my-3 justify-content-center d-block">
+            <div className="input-group mb-3 ">
+              <input
+                type="text"
+                className="form-control mx-5"
+                placeholder="cari nama buku ..."
+                aria-label="cari nama buku"
+                value={keyword}
+                onChange={(event) => setKeyword(event.target.value)}
+              />
+              {/* <button
               className="btn btn-outline-secondary"
               type="button"
               id="button-addon2"
@@ -104,36 +107,36 @@ const Books = () => {
               >
               search
             </button> */}
+            </div>
           </div>
-        </div>
-        <div className="table table-responsive">
-          <table className="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col">Judul Buku</th>
-                <th scope="col">Penerbit</th>
-                <th scope="col">Pengarang</th>
-                <th scope="col">Aksi</th>
-              </tr>
-            </thead>
+          <div className="table table-responsive p-5 mb-4 bg-blue-200 rounded-3">
+            <table className="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">Judul Buku</th>
+                  <th scope="col">Penerbit</th>
+                  <th scope="col">Pengarang</th>
+                  <th scope="col">Aksi</th>
+                </tr>
+              </thead>
 
-            <tbody>
-              {books.map((book, index) => {
-                return (
-                  <tr key={book._id}>
-                    <th scope="row">{index + 1}</th>
-                    <td>{book.namaBuku}</td>
-                    <td>{book.penerbit}</td>
-                    <td>{book.pengarang}</td>
-                    <Aksi
-                      pathdetail={`/detail/${book._id}`}
-                      pathedit={`/ubah/${book._id}`}
-                      onclick={() => {
-                        deleteBook(book._id);
-                      }}
-                    />
-                    {/* <td>
+              <tbody>
+                {books.map((book, index) => {
+                  return (
+                    <tr key={book._id}>
+                      <th scope="row">{index + 1}</th>
+                      <td>{book.namaBuku}</td>
+                      <td>{book.penerbit}</td>
+                      <td>{book.pengarang}</td>
+                      <Aksi
+                        pathdetail={`/detail/${book._id}`}
+                        pathedit={`/ubah/${book._id}`}
+                        onclick={() => {
+                          deleteBook(book._id);
+                        }}
+                      />
+                      {/* <td>
                     <Link to={`/ubah/${book._id}`}>
                     <span className="badge text-bg-success">ubah</span>
                     </Link>
@@ -147,11 +150,12 @@ const Books = () => {
                     hapus
                     </button>
                   </td> */}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
