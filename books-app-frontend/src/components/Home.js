@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { Header } from "./header";
 import Navbar from "./navbar";
+// import imgDescrib from "https://drive.google.com/uc?export=view&id=1fUjAtJazxsJSy0RzsTS4NgHFtCm4zDru";
 import imgDescrib from "../Assets/img/foto_dokumentasi18.jpeg";
 import imgKegiatan from "../Assets/img/foto_dokumentasi13.jpeg";
 import imgKegiatan2 from "../Assets/img/foto_dokumentasi14.jpeg";
