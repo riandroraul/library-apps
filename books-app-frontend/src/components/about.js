@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import { Header } from "./header";
 // import { Outlet } from "react-router-dom";
 import Navbar from "./navbar";
-import RoleAuth from "./RoleAuth";
+import img1 from "../Assets/img/foto_dokumentasi5.jpeg";
 
 const About = () => {
   const title = "Tentang Perpus";
@@ -23,9 +23,7 @@ const About = () => {
                 examples below for how you can remix and restyle it to your
                 liking.
               </p>
-              <button class="btn btn-primary btn-lg" type="button">
-                Example button
-              </button>
+              <img src={img1} alt="" />
             </div>
           </div>
 
@@ -38,9 +36,6 @@ const About = () => {
                   utility to mix up the jumbotron look. Then, mix and match with
                   additional component themes and more.
                 </p>
-                <button class="btn btn-outline-light" type="button">
-                  Example button
-                </button>
               </div>
             </div>
             <div class="col-md-6">
@@ -52,9 +47,7 @@ const About = () => {
                   hood at the source HTML here as we've adjusted the alignment
                   and sizing of both column's content for equal-height.
                 </p>
-                <button class="btn btn-outline-secondary" type="button">
-                  Example button
-                </button>
+                {/* <img src={img1} alt="" /> */}
               </div>
             </div>
           </div>

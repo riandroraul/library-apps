@@ -13,6 +13,7 @@ software yang harus di install
 3. browser
 
 buat file .env di dalam folder book-app-backend yang isi filenya seperti berikut :
+
 MONGODB_LOKAL = mongodb://127.0.0.1:27017/perpus
 MONGODB_ATLAS = mongodb+srv://admin123:admin123@admin123.q7o3m0r.mongodb.net/perpus?retryWrites=true&w=majority // optional
 PORT = 5000
