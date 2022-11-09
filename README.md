@@ -4,6 +4,26 @@ website sistem informasi perpustakaan
 
 SISTEM INFORMASI PERPUSTAKAAN DENGAN ARSITEKTUR MICROSERVICES MENGGUNAKAN STACK TEKNOLOGI MERN (Mongodb, Express, React Js, Node JS)
 
+# panduan menjalankan aplikasi
+
+software yang harus di install
+
+1. node js
+2. mongodb lokal atau atlas (online)
+3. browser
+
+buat file .env di dalam folder book-app-backend yang isi filenya seperti berikut :
+MONGODB_LOKAL = mongodb://127.0.0.1:27017/perpus
+MONGODB_ATLAS = mongodb+srv://admin123:admin123@admin123.q7o3m0r.mongodb.net/perpus?retryWrites=true&w=majority // optional
+PORT = 5000
+HOST = smtp.gmail.com
+USER = watitrihani@gmail.com
+PASS = retzoaobgoozflcj
+BASE_URL = http://localhost:5000
+SERVICE = gmail
+
+lalu masuk kedalam folder books-app-backend dan books-app-frontend melalui terminal git bash, cmd, etc.. ketikan perintah npm install untuk menginstall dependency yang dibutuhkan
+
 # Penjelasan
 
 Pada project website yang kami buat ini dengan arsitektur microservices. Memisahkan antara backend dan frontend dengan menyediakan REST Server pada sisi backend dan REST Client yang meminta akses atau request kepada REST Server. Pada sisi backend kami menggunakan expressjs dan database mongodb untuk membuat fungsionalitas REST Server / Service yang akan di akses di sisi client / frontend, dan untuk frontend kami menggunakan library javascript React Js untuk membangun user interface juga react router dom untuk berpindah antar halaman dan menggunakan bootstrap versi 5 untuk framework html dan css. Pada authentikasi login kami menggunakan jsonwebtoken (JWT) untuk mengautentikasi user / pengguna.

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./navbar";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Header } from "./header";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -81,8 +82,8 @@ const Users = () => {
   return (
     <div>
       <Navbar />
-      <div className="container">
-        <h1>{title}</h1>
+      <div className="container p-5 mb-4">
+        <Header title={title} />
         <div className="col-md-6 my-3">
           <div className="input-group mb-3">
             <input
