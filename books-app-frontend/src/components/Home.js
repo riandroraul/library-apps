@@ -2,7 +2,6 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { Header } from "./header";
 import Navbar from "./navbar";
-// import imgDescrib from "https://drive.google.com/uc?export=view&id=1fUjAtJazxsJSy0RzsTS4NgHFtCm4zDru";
 import imgDescrib from "../Assets/img/foto_dokumentasi18.jpeg";
 import imgKegiatan from "../Assets/img/foto_dokumentasi13.jpeg";
 import imgKegiatan2 from "../Assets/img/foto_dokumentasi14.jpeg";
@@ -55,8 +54,9 @@ function Home() {
             </div>
             <div className="col-md-6">
               <div className="h-100 p-5 bg-light border rounded-3">
-                <h2>Add borders</h2>
+                <h2>Informasi</h2>
                 <p>
+                  Berisi informasi tentang perpustakaan ... <br />
                   Or, keep it light and add a border for some added definition
                   to the boundaries of your content. Be sure to look under the
                   hood at the source HTML here as we've adjusted the alignment

@@ -1,7 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { Header } from "./header";
-// import { Outlet } from "react-router-dom";
 import Navbar from "./navbar";
 import img1 from "../Assets/img/foto_dokumentasi5.jpeg";
 
@@ -16,22 +15,27 @@ const About = () => {
 
           <div class="p-5 mb-4 bg-light rounded-3">
             <div class="container-fluid py-5">
-              <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+              <h1 class="display-5 fw-bold">Tentang Perpustakaan</h1>
               <p class="col-md-8 fs-4">
-                Using a series of utilities, you can create this jumbotron, just
-                like the one in previous versions of Bootstrap. Check out the
-                examples below for how you can remix and restyle it to your
-                liking.
+                berisi informasi tentang ... <br /> Lorem ipsum dolor sit, amet
+                consectetur adipisicing elit. Repellat vel est accusantium
+                repudiandae explicabo necessitatibus nostrum iusto ut aliquid
+                laborum minima perferendis quas, ducimus reiciendis!
               </p>
-              <img src={img1} alt="" />
+              <img
+                src={img1}
+                alt="Gambar Perpustakaan"
+                className="img-fluid img-thumbnail rounded"
+              />
             </div>
           </div>
 
           <div class="row align-items-md-stretch">
             <div class="col-md-6">
               <div class="h-100 p-5 text-bg-dark rounded-3">
-                <h2>Change the background</h2>
+                <h2>member perpustakaan</h2>
                 <p>
+                  berisi anggota member perpustakaan .... <br />
                   Swap the background-color utility and add a `.text-*` color
                   utility to mix up the jumbotron look. Then, mix and match with
                   additional component themes and more.
@@ -40,12 +44,12 @@ const About = () => {
             </div>
             <div class="col-md-6">
               <div class="h-100 p-5 bg-light border rounded-3">
-                <h2>Add borders</h2>
+                <h2>Jadwal</h2>
                 <p>
-                  Or, keep it light and add a border for some added definition
-                  to the boundaries of your content. Be sure to look under the
-                  hood at the source HTML here as we've adjusted the alignment
-                  and sizing of both column's content for equal-height.
+                  Berisi informasi jadwal perpustakaan .... <br />
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Deleniti, ipsum placeat! Beatae corporis illo, modi amet, quod
+                  repellat quibusdam, iste voluptatum earum autem sint ab.
                 </p>
                 {/* <img src={img1} alt="" /> */}
               </div>
