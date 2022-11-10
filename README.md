@@ -14,14 +14,14 @@ software yang harus di install
 
 buat file .env di dalam folder book-app-backend yang isi filenya seperti berikut :
 
-MONGODB_LOKAL = mongodb://127.0.0.1:27017/perpus
-MONGODB_ATLAS = mongodb+srv://admin123:admin123@admin123.q7o3m0r.mongodb.net/perpus?retryWrites=true&w=majority // optional
-PORT = 5000
-HOST = smtp.gmail.com
-USER = watitrihani@gmail.com
-PASS = retzoaobgoozflcj
-BASE_URL = http://localhost:5000
-SERVICE = gmail
+MONGODB_LOKAL = mongodb://127.0.0.1:27017/perpus <br/>
+MONGODB_ATLAS = mongodb+srv://example.url <br/>
+PORT = 5000 <br/>
+HOST = smtp.gmail.com <br/>
+USER = watitrihani@gmail.com <br/>
+PASS = retzoaobgoozflcj <br/>
+BASE_URL = http://localhost:5000 <br/>
+SERVICE = gmail <br/>
 
 lalu masuk kedalam folder books-app-backend dan books-app-frontend melalui terminal git bash, cmd, etc.. ketikan perintah npm install untuk menginstall dependency yang dibutuhkan
 
