@@ -7,8 +7,9 @@ import { Header } from "./header";
 // import ProtectedContent from "./ProtectedContent";
 
 const Books = () => {
-  const [books, setBooks] = useState([]);
+  let [books, setBooks] = useState([]);
   const [keyword, setKeyword] = useState("");
+  const [sortJudul, setSortJudul] = useState("");
 
   const getAllBooks = async () => {
     const response = await fetch(`http://localhost:5000/books`, {
@@ -61,6 +62,9 @@ const Books = () => {
     );
     const result = await response.json();
     setBooks(result);
+    if (sortJudul === "a-z") {
+      console.log("sort a-z");
+    }
   };
 
   useEffect(() => {
@@ -75,6 +79,15 @@ const Books = () => {
 
   const title = "Daftar Buku";
   // console.log(totalPage);
+  console.log(sortJudul);
+  if (sortJudul === "A-Z") {
+    books = books.sort((a, b) => a.namaBuku.localeCompare(b.namaBuku));
+    console.log(books);
+  } else if (sortJudul === "Z-A") {
+    books = books.sort((a, b) => b.namaBuku.localeCompare(a.namaBuku));
+  } else {
+    books = books.sort();
+  }
   return (
     <div>
       <Navbar />
@@ -114,7 +127,24 @@ const Books = () => {
               <thead>
                 <tr>
                   <th scope="col">No</th>
-                  <th scope="col">Judul Buku</th>
+                  <th scope="col">
+                    Judul Buku
+                    <select
+                      className="form-select-sm float-end"
+                      aria-label="Default select example"
+                      name="sortJudul"
+                      onChange={(event) => {
+                        setSortJudul(event.target.value);
+                      }}
+                    >
+                      <option selected value={sortJudul}>
+                        {sortJudul}
+                      </option>
+                      <option value={"none"}>none</option>
+                      <option value={"A-Z"}>A-Z</option>
+                      <option value={"Z-A"}>Z-A</option>
+                    </select>
+                  </th>
                   <th scope="col">Penerbit</th>
                   <th scope="col">Pengarang</th>
                   <th scope="col">Aksi</th>
