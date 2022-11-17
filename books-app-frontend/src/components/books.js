@@ -75,7 +75,7 @@ const Books = () => {
     } else {
       onSearch();
     }
-  }, [keyword]);
+  }, [keyword, books]);
 
   const title = "Daftar Buku";
   // console.log(totalPage);
