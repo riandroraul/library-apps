@@ -11,8 +11,8 @@ const ProfilDetail = () => {
       <main>
         <div className="container py-4">
           <Header title={"Profil Saya"} />
-          <div class="row ">
-            <div class="col-6 bg-light rounded-3">
+          <div className="row ">
+            <div className="col-6 bg-light rounded-3">
               <h6 className="display-5 fw-bold">Profile</h6>
               <p className="display-6">Nama: {user.nama}</p>
               <p className="display-6">Email: {user.email}</p>

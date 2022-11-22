@@ -62,9 +62,6 @@ const Books = () => {
     );
     const result = await response.json();
     setBooks(result);
-    if (sortJudul === "a-z") {
-      console.log("sort a-z");
-    }
   };
 
   useEffect(() => {
@@ -75,14 +72,12 @@ const Books = () => {
     } else {
       onSearch();
     }
-  }, [keyword, books]);
+  }, [keyword, sortJudul]);
 
   const title = "Daftar Buku";
-  // console.log(totalPage);
-  console.log(sortJudul);
+
   if (sortJudul === "A-Z") {
     books = books.sort((a, b) => a.namaBuku.localeCompare(b.namaBuku));
-    console.log(books);
   } else if (sortJudul === "Z-A") {
     books = books.sort((a, b) => b.namaBuku.localeCompare(a.namaBuku));
   } else {
@@ -91,10 +86,9 @@ const Books = () => {
   return (
     <div>
       <Navbar />
-      {/* <h1>{title}</h1> */}
       <div className="container p-5 mb-4 ">
         <Header title={title} />
-        <div class="bg-light rounded-3">
+        <div className="bg-light rounded-3">
           <div className="row mx-5">
             <div className="col-6">
               <ButtonAdd path="/tambah" />
@@ -110,16 +104,6 @@ const Books = () => {
                 value={keyword}
                 onChange={(event) => setKeyword(event.target.value)}
               />
-              {/* <button
-              className="btn btn-outline-secondary"
-              type="button"
-              id="button-addon2"
-              onClick={() => {
-                onSearch();
-              }}
-              >
-              search
-            </button> */}
             </div>
           </div>
           <div className="table table-responsive p-5 mb-4 bg-blue-200 rounded-3">
@@ -137,7 +121,7 @@ const Books = () => {
                         setSortJudul(event.target.value);
                       }}
                     >
-                      <option selected value={sortJudul}>
+                      <option selected defaultValue={sortJudul}>
                         {sortJudul}
                       </option>
                       <option value={"none"}>none</option>
@@ -166,20 +150,6 @@ const Books = () => {
                           deleteBook(book._id);
                         }}
                       />
-                      {/* <td>
-                    <Link to={`/ubah/${book._id}`}>
-                    <span className="badge text-bg-success">ubah</span>
-                    </Link>
-                    <button
-                    type="submit"
-                    className="badge text-bg-danger tombol-hapus"
-                    onClick={() => {
-                      deleteBook(book._id);
-                    }}
-                    >
-                    hapus
-                    </button>
-                  </td> */}
                     </tr>
                   );
                 })}

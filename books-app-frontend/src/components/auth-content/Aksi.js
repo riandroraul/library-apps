@@ -16,7 +16,7 @@ const Aksi = (props) => {
     );
   } else {
     return (
-      <td className="d-grid gap-2 d-md-block mx-auto">
+      <td className=" gap-2 d-md-block mx-auto">
         <Link to={props.pathdetail}>
           <button type="button" className="btn btn-outline-info btn-sm mx-2">
             Detail

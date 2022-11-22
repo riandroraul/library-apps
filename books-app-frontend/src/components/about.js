@@ -10,13 +10,12 @@ const About = () => {
     <div>
       <Navbar />
       <main>
-        <div class="container py-4">
+        <div className="container py-4">
           <Header title={title} />
-
-          <div class="p-5 mb-4 bg-light rounded-3">
-            <div class="container-fluid py-5">
-              <h1 class="display-5 fw-bold">Tentang Perpustakaan</h1>
-              <p class="col-md-8 fs-4">
+          <div className="p-5 mb-4 bg-light rounded-3">
+            <div className="container-fluid py-5">
+              <h1 className="display-5 fw-bold">Tentang Perpustakaan</h1>
+              <p className="col-md-8 fs-4">
                 berisi informasi tentang ... <br /> Lorem ipsum dolor sit, amet
                 consectetur adipisicing elit. Repellat vel est accusantium
                 repudiandae explicabo necessitatibus nostrum iusto ut aliquid
@@ -30,9 +29,9 @@ const About = () => {
             </div>
           </div>
 
-          <div class="row align-items-md-stretch">
-            <div class="col-md-6">
-              <div class="h-100 p-5 text-bg-dark rounded-3">
+          <div className="row align-items-md-stretch">
+            <div className="col-md-6">
+              <div className="h-100 p-5 text-bg-dark rounded-3">
                 <h2>member perpustakaan</h2>
                 <p>
                   berisi anggota member perpustakaan .... <br />
@@ -42,8 +41,8 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div class="col-md-6">
-              <div class="h-100 p-5 bg-light border rounded-3">
+            <div className="col-md-6">
+              <div className="h-100 p-5 bg-light border rounded-3">
                 <h2>Jadwal</h2>
                 <p>
                   Berisi informasi jadwal perpustakaan .... <br />
@@ -56,7 +55,7 @@ const About = () => {
             </div>
           </div>
 
-          <footer class="pt-3 mt-4 text-muted border-top">
+          <footer className="pt-3 mt-4 text-muted border-top">
             &copy; Copyright 2022
           </footer>
         </div>

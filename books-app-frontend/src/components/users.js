@@ -89,7 +89,7 @@ const Users = () => {
             <div className="input-group mb-3 mx-3">
               <input
                 type="text"
-                className="form-control"
+                className="form-control mt-3"
                 placeholder="cari nama user ..."
                 aria-label="cari nama user"
                 value={keyword}

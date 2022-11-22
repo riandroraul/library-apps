@@ -5,7 +5,7 @@ import NavUser from "./NavUser";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-secondary">
+    <nav className="navbar sticky-top navbar-expand-lg bg-secondary">
       <div className="container">
         <Link className="navbar-brand text-light" to="/">
           Beranda
@@ -23,9 +23,6 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav justify-content-end flex-grow-1 pe-2">
-            {/* <li className="nav-item">
-              <span>{<Clock date={new Date()} />}</span>
-            </li> */}
             <li className="nav-item">
               <Link
                 className="nav-link text-light"
