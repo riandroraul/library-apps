@@ -68,7 +68,7 @@ const Books = () => {
     localStorage.getItem("userLogin");
     localStorage.getItem("token");
     if (keyword === "") {
-      getAllBooks(); // dijalankan saat halaman books ini di render
+      getAllBooks();
     } else {
       onSearch();
     }
