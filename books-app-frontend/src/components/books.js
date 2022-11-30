@@ -12,7 +12,7 @@ const Books = () => {
   const [sortJudul, setSortJudul] = useState("");
 
   const getAllBooks = async () => {
-    const response = await fetch(`http://localhost:5000/books`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URI}/books`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -34,7 +34,7 @@ const Books = () => {
       onClick: (event) => event.preventDefault(),
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/books/hapus/${id}`, {
+        fetch(`${process.env.REACT_APP_API_URI}/books/hapus/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
@@ -52,7 +52,7 @@ const Books = () => {
 
   const onSearch = async () => {
     const response = await fetch(
-      "http://localhost:5000/books/search?namaBuku=" + keyword,
+      `${process.env.REACT_APP_API_URI}/books/search?namaBuku=${keyword}`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -75,7 +75,7 @@ const Books = () => {
   }, [keyword, sortJudul]);
 
   const title = "Daftar Buku";
-
+  // const onSorting = () => {
   if (sortJudul === "A-Z") {
     books = books.sort((a, b) => a.namaBuku.localeCompare(b.namaBuku));
   } else if (sortJudul === "Z-A") {
@@ -83,6 +83,9 @@ const Books = () => {
   } else {
     books = books.sort();
   }
+  // };
+
+  // console.log(process.env);
   return (
     <div>
       <Navbar />
@@ -121,7 +124,7 @@ const Books = () => {
                         setSortJudul(event.target.value);
                       }}
                     >
-                      <option selected defaultValue={sortJudul}>
+                      <option selected value={sortJudul}>
                         {sortJudul}
                       </option>
                       <option value={"none"}>none</option>

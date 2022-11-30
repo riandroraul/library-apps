@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -27,7 +27,10 @@ const Login = () => {
       body: JSON.stringify(cekUser),
     };
 
-    const response = await fetch("http://localhost:5000/login", requestOptions);
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URI}/login`,
+      requestOptions
+    );
     const { dataUser: user, message, token } = await response.json();
     // console.log(response);
     if (response.status !== 200) {

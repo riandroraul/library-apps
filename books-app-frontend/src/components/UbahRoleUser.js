@@ -24,7 +24,7 @@ const UbahRoleUser = () => {
     };
 
     const response = await fetch(
-      `http://localhost:5000/ubahRoleUser/${id}`,
+      `${process.env.REACT_APP_API_URI}/ubahRoleUser/${id}`,
       requestOptions
     );
     // console.log(response);
@@ -47,14 +47,16 @@ const UbahRoleUser = () => {
   };
 
   const getUserById = async () => {
-    const response = await fetch(`http://localhost:5000/users/${id}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
-      },
-    });
+    const response = await fetch(
+      `${process.env.REACT_APP_API_URI}/users/${id}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }
+    );
     const { user } = await response.json();
-    // console.log(user);
     setNamaUser(user.nama);
     setEmailUser(user.email);
     setRoleUser(user.role);

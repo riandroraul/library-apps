@@ -47,7 +47,7 @@ const getUserById = async (req, res) => {
       { _id: req.params.id },
       { _id: "$_id", nama: "$nama", email: "$email", role: "$role" }
     );
-    // console.log(user);
+    // console.log(req.params);
     res.status(200).json({
       user,
       message: "user ditemukan",
@@ -162,7 +162,7 @@ const reqPasswordReset = async (req, res) => {
     if (!token) {
       token = await new Token({
         userId: user._id,
-        token: jwt.sign({ id: user._id }, "secretkey", { expiresIn: "20m" }),
+        token: jwt.sign({ id: user._id }, "secretkey", { expiresIn: "45m" }),
       }).save();
     }
     const url = req.body.url;
@@ -171,7 +171,7 @@ const reqPasswordReset = async (req, res) => {
     <p style="color: red; font-size: 12px; font-weight: bold;">&#9888; link waktu terbatas, segera ganti password anda</p>
     <a href='${url}/change-password/${user._id}/${token.token}'>Ganti Password</a>
     <p>link tautan : ${url}/change-password/${user._id}/${token.token}</p>
-    <p>link expired : 20 Menit</p>
+    <p>link expired : 45 Menit</p>
     `;
     sendEmail(user.email, "Reset Password", html);
     // req.link = link;

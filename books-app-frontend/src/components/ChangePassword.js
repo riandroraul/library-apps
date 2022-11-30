@@ -8,8 +8,6 @@ const ChangePassword = () => {
   const navigate = useNavigate();
   const id = useParams();
   const token = useParams();
-  console.log(id.id);
-  console.log(token.token);
 
   const changePassword = async (event) => {
     event.preventDefault();
@@ -45,7 +43,7 @@ const ChangePassword = () => {
     };
 
     const response = await fetch(
-      `http://localhost:5000/change-password/${id.id}/${token.token}`,
+      `${process.env.REACT_APP_API_URI}/change-password/${id.id}/${token.token}`,
       requestOptions
     );
     const { message } = await response.json();
@@ -93,7 +91,7 @@ const ChangePassword = () => {
                     </div>
                     <div className="mb-3">
                       <label htmlFor="password1" className="form-label">
-                        Password
+                        re-type password
                       </label>
                       <input
                         type="password"

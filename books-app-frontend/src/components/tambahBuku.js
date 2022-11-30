@@ -34,7 +34,7 @@ const TambahBuku = () => {
       body: JSON.stringify(data),
     };
     const response = await fetch(
-      "http://localhost:5000/books/tambah",
+      `${window.env.REACT_API_URI}/books/tambah`,
       requestOptions
     );
     const books = await response.json();

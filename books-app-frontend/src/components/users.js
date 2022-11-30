@@ -9,7 +9,7 @@ const Users = () => {
   const [keyword, setKeyword] = useState("");
 
   const getUsers = () => {
-    fetch("http://localhost:5000/users", {
+    fetch(`${process.env.REACT_APP_API_URI}/users`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -33,7 +33,7 @@ const Users = () => {
       onClick: (event) => event.preventDefault(),
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/hapusUser/${id}`, {
+        fetch(`${process.env.REACT_APP_API_URI}/hapusUser/${id}`, {
           method: "DELETE",
           headers: {
             "Content-Type": "application/json",
@@ -59,7 +59,7 @@ const Users = () => {
 
   const searchUser = async () => {
     const response = await fetch(
-      `http://localhost:5000/searchUser?nama=${keyword}`,
+      `${process.env.REACT_APP_API_URI}/searchUser?nama=${keyword}`,
       {
         headers: {
           "Content-Type": "application/json",
@@ -84,7 +84,7 @@ const Users = () => {
       <Navbar />
       <div className="container p-5 mb-4">
         <Header title={title} />
-        <div class="bg-light rounded-3">
+        <div className="bg-light rounded-3">
           <div className="col-md-6 my-3">
             <div className="input-group mb-3 mx-3">
               <input

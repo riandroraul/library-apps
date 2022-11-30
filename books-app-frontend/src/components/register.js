@@ -28,7 +28,7 @@ const Register = () => {
       body: JSON.stringify(newUser),
     };
     const response = await fetch(
-      "http://localhost:5000/tambahUser",
+      `${window.env.REACT_API_URI}/tambahUser`,
       requestOptions
     );
     const users = await response.json();

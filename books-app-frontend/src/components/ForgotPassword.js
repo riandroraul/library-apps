@@ -17,7 +17,7 @@ const ForgotPassword = () => {
     }
     const data = {
       email,
-      url: "http://localhost:3000",
+      url: `${process.env.REACT_APP_BASE_URI}`,
     };
 
     const requestOptions = {
@@ -27,7 +27,7 @@ const ForgotPassword = () => {
     };
 
     const response = await fetch(
-      "http://localhost:5000/req-reset-password",
+      `${process.env.REACT_APP_API_URI}/req-reset-password`,
       requestOptions
     );
     const { message } = await response.json();
@@ -72,8 +72,8 @@ const ForgotPassword = () => {
                         value={email}
                         onChange={(event) => setEmail(event.target.value)}
                       />
-                      <div class="message">
-                        <p class="text-start text-primary">
+                      <div className="message">
+                        <p className="text-start text-primary">
                           Pastikan email yang anda masukkan email yang aktif
                         </p>
                       </div>

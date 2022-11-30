@@ -7,7 +7,7 @@ const DetailBook = () => {
   const { id } = useParams();
 
   const getBookById = async () => {
-    const response = await fetch(`http://localhost:5000/books/id/${id}`, {
+    const response = await fetch(`${window.env.REACT_API_URI}/books/id/${id}`, {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("token")}`,

@@ -56,7 +56,7 @@ const About = () => {
           </div>
 
           <footer className="pt-3 mt-4 text-muted border-top">
-            &copy; Copyright 2022
+            &copy; Copyright {new Date().getFullYear()}
           </footer>
         </div>
       </main>
