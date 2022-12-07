@@ -24,6 +24,7 @@ BASE_URL = http://localhost:5000 <br/>
 SERVICE = gmail <br/>
 
 lalu buat file .env di dalam folder book-app-frontend yang isi filenya seperti berikut :
+
 REACT_APP_BASE_URI = http://localhost:3000 <br>
 REACT_APP_API_URI = http://localhost:5000 <br>
 
