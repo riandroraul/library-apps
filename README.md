@@ -23,6 +23,10 @@ PASS = retzoaobgoozflcj <br/>
 BASE_URL = http://localhost:5000 <br/>
 SERVICE = gmail <br/>
 
+lalu buat file .env di dalam folder book-app-frontend yang isi filenya seperti berikut :
+REACT_APP_BASE_URI = http://localhost:3000
+REACT_APP_API_URI = http://localhost:5000
+
 lalu masuk kedalam folder books-app-backend dan books-app-frontend melalui terminal git bash, cmd, etc.. ketikan perintah npm install untuk menginstall dependency yang dibutuhkan
 
 # Penjelasan
