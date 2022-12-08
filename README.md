@@ -19,7 +19,7 @@ MONGODB_ATLAS = mongodb+srv://example.url <br/>
 PORT = 5000 <br/>
 HOST = smtp.gmail.com <br/>
 USER = watitrihani@gmail.com <br/>
-PASS = retzoaobgoozflcj <br/>
+PASS = itmebymfrpxgfsbg <br/>
 BASE_URL = http://localhost:5000 <br/>
 SERVICE = gmail <br/>
 
