@@ -59,3 +59,6 @@ Pada aplikasi website ini kami membuat dengan tiga role user:
    Berisi informasi tentang perpustakaan
 10. Menu logout / keluar
     Pada menu logout / keluar, token (JWT) dan informasi user login akan di hapus dari local storage lalu diarahkan ke halaman login.
+
+dokumentasi youtube : 
+https://youtu.be/bgxpdF1C5Kk
