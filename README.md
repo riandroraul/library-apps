@@ -18,8 +18,8 @@ MONGODB_LOKAL = mongodb://127.0.0.1:27017/perpus <br/>
 MONGODB_ATLAS = mongodb+srv://example.url <br/>
 PORT = 5000 <br/>
 HOST = smtp.gmail.com <br/>
-USER = watitrihani@gmail.com <br/>
-PASS = itmebymfrpxgfsbg <br/>
+USER = example@gmail.com <br/>
+PASS = examplePass <br/>
 BASE_URL = http://localhost:5000 <br/>
 SERVICE = gmail <br/>
 
